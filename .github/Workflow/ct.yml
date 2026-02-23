@@ -14,8 +14,11 @@ jobs:
       run:  |
         echo " Démarrage du pipeline d'integration continue"
         echo "STEP1 = $STEP1"
+
       name : 'Etape 2- Récupération du code'
-      run: echo Récupération du code
+      run: | 
+        echo "Récupération du code"
+        echo "StEP2 = ${{ vars.STEP2 }}"
       name : 'Etape 3- Build'
       run: echo Build
       name : 'Etape 4- Tests'
