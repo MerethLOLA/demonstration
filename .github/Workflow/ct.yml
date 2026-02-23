@@ -20,7 +20,9 @@ jobs:
         echo "Récupération du code"
         echo "StEP2 = ${{ vars.STEP2 }}"
       name : 'Etape 3- Build'
-      run: echo Build
+      run: |
+        echo "phase de build"
+        echo "${{ secrets.MY_SECRET_NAME }}"
       name : 'Etape 4- Tests'
       run: echo Tests
       name : 'Etape 5- Packaging'
