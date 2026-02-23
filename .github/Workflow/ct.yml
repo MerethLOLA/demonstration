@@ -1,0 +1,20 @@
+name: testing github workflow
+
+on : push
+
+jobs:
+  init:
+    runs-on: ubuntu-latest
+    steps:
+      name : 'Etape 1- Initialisation'
+      run: echo Initialisation
+      name : 'Etape 2- Récupération du code'
+      run: echo Récupération du code
+      name : 'Etape 3- Build'
+      run: echo Build
+      name : 'Etape 4- Tests'
+      run: echo Tests
+      name : 'Etape 5- Packaging'
+      run: echo Packaging
+      name : 'Etape 6- Fin du pipeline'
+      run: echo Fin du pipeline
