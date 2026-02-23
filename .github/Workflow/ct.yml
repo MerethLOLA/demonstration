@@ -13,7 +13,7 @@ jobs:
       -name : 'Etape 1- Initialisation'
       run:  |
         echo " Démarrage du pipeline d'integration continue"
-        echo $STEP1
+        echo "STEP1 = $STEP1"
       name : 'Etape 2- Récupération du code'
       run: echo Récupération du code
       name : 'Etape 3- Build'
