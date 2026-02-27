@@ -1,31 +1,34 @@
 name: testing github workflow
 
-on : push
+on: push
 
 jobs:
   init:
     runs-on: ubuntu-latest
-
     env:
-    STEP1: "Le code vient d'être poussé sur Github"
+      STEP1: "Le code vient d'être poussé sur Github"
 
     steps:
-      -name : 'Etape 1- Initialisation'
-      run:  |
-        echo " Démarrage du pipeline d'integration continue"
-        echo "STEP1 = $STEP1"
+      - name: 'Etape 1- Initialisation'
+        run:  |
+          echo " Démarrage du pipeline d'integration continue"
+          echo "STEP1 = $STEP1"
 
-      name : 'Etape 2- Récupération du code'
-      run: | 
-        echo "Récupération du code"
-        echo "StEP2 = ${{ vars.STEP2 }}"
-      name : 'Etape 3- Build'
-      run: |
-        echo "phase de build"
-        echo "${{ secrets.MY_SECRET_NAME }}"
-      name : 'Etape 4- Tests'
-      run: echo Tests
-      name : 'Etape 5- Packaging'
-      run: echo Packaging
-      name : 'Etape 6- Fin du pipeline'
-      run: echo Fin du pipeline
+      - name: 'Etape 2- Récupération du code'
+        run: | 
+          echo "Récupération du code"
+          echo "StEP2 = ${{ vars.STEP2 }}"
+
+      - name: 'Etape 3- Build'
+        run: |
+          echo "phase de build"
+          echo "${{ secrets.MY_SECRET_NAME }}"
+
+      - name: 'Etape 4- Tests'
+        run: echo Tests
+
+      - name: 'Etape 5- Packaging'
+        run: echo Packaging
+
+      - name: 'Etape 6- Fin du pipeline'
+        run: echo Fin du pipeline
